@@ -20,9 +20,10 @@ pipeline {
             }
         stage('passwd') {
             steps {
-                cat /etc/passwd
+                cat '/etc/passwd'
                 echo 'Deploying application'
             }
+        }
         }
     }
 }
