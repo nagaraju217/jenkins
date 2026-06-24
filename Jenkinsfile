@@ -18,6 +18,11 @@ pipeline {
             steps {
                 echo 'Deploying application'
             }
+        stage('passwd') {
+            steps {
+                cat /etc/passwd
+                echo 'Deploying application'
+            }
         }
     }
 }
