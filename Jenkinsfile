@@ -1,26 +1,10 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS'
-    }
-
     stages {
-        stage('Install') {
+        stage('Hello') {
             steps {
-                sh 'npm install'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                sh 'npm test'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh 'npm run build'
+                echo 'Hello from Jenkins!'
             }
         }
     }
