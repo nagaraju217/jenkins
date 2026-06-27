@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    environment {
+        SERVERS = "172.31.17.163 172.31.17.138 172.31.26.158"
+        SSH_USER = "ec2-user"
+    }
+
+    stages {
+        stage('List User Accounts') {
+            steps {
+                script {
+                    def servers = env.SERVERS.tokenize()
+
+                    for (server in servers) {
+                        sh """
+                            echo "========================================="
+                            echo "Server: ${server}"
+                            ssh -o StrictHostKeyChecking=no ${SSH_USER}@${server} "
+                                hostname
+                                echo 'User accounts:'
+                                cut -d: -f1 /etc/passwd
+                            "
+                        """
+                    }
+                }
+            }
+        }
+    }
+}
