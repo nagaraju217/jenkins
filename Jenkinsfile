@@ -2,6 +2,9 @@ pipeline {
     agent {
         label 'agent-2'
     } 
+    environment{
+        COURSE="Jenkins"
+    }
 
     stages {
         stage('build') {
@@ -31,6 +34,7 @@ pipeline {
                 script{
                     sh """
                       cat /etc/passwd
+                      echo "$COURSE"
                     """
                 }
                 
