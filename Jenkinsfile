@@ -26,11 +26,11 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('get users') {
             steps {
                 script{
                     sh """
-                      echo 'npm run build'
+                      cat /etc/password
                     """
                 }
                 
