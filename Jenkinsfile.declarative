@@ -6,34 +6,19 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                script{
-                    sh """"
-                      echo 'npm install'
-                    """
-                }
-                
+                echo 'npm install'
             }
         }
 
         stage('Test') {
             steps {
-                script{
-                    sh """"
-                      echo 'npm test'
-                    """
-                }
-                
+                echo 'npm test'
             }
         }
 
         stage('Build') {
             steps {
-                script{
-                    sh """"
-                      echo 'npm run build'
-                    """
-                }
-                
+                echo 'npm run build'
             }
         }
     }
