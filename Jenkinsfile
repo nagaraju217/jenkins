@@ -12,7 +12,7 @@ pipeline {
                 script{
                     sh """
                       echo 'npm install'
-                      ENV
+                      
                     """
                 }
                 
@@ -36,6 +36,7 @@ pipeline {
                     sh """
                       cat /etc/passwd
                       echo "$COURSE"
+                      env
                     """
                 }
                 
