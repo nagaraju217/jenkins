@@ -12,6 +12,7 @@ pipeline {
                 script{
                     sh """
                       echo 'npm install'
+                      ENV
                     """
                 }
                 
