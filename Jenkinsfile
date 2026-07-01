@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script{
                     sh """
-                      cat /etc/password
+                      cat /etc/passwd
                     """
                 }
                 
